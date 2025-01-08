@@ -44,7 +44,7 @@ export function DialogStoreProfile() {
 
       return { previousProfile: cached };
     },
-    onError(_, _, context) {
+    onError(_, __, context) {
       if (context?.previousProfile) {
         updateManagedRestaurantCache(context.previousProfile);
       }
