@@ -16,14 +16,6 @@ import {
 
 import colors from "tailwindcss/colors";
 
-const data = [
-  { product: "Corn bacon", amount: 40 },
-  { product: "Mussarela", amount: 30 },
-  { product: "Marguerita", amount: 50 },
-  { product: "4 Queijos", amount: 16 },
-  { product: "Alho", amount: 26 },
-];
-
 const COLORS = [
   colors.sky[500],
   colors.amber[500],
