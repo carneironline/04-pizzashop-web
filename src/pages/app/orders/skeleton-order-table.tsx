@@ -6,7 +6,7 @@ import { Search } from "lucide-react";
 export function SkeletonOrderTable() {
   return Array.from({ length: 10 }).map((_, i) => {
     return (
-      <TableRow>
+      <TableRow key={i}>
         <TableCell>
           <Button disabled variant="outline" size="xs">
             <Search className="h-3 w-3" />
