@@ -1,6 +1,6 @@
 import {
   getOrderDetails,
-  getOrderDetailsResponse,
+  GetOrderDetailsResponse,
 } from "@/api/get-order-details";
 import OrderStatus from "@/components/order-status";
 import {
@@ -34,7 +34,7 @@ export function OrderDetails({ orderId, open }: OrderDetailsProps) {
     enabled: open,
   });
 
-  function TableComponent(order: getOrderDetailsResponse) {
+  function TableComponent(order: GetOrderDetailsResponse) {
     const phone = order.customer.phone ?? "Não informado";
 
     const totalInCents = (order.totalInCents / 100).toLocaleString("pt-BR", {
