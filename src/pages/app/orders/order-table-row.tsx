@@ -116,7 +116,7 @@ export function OrderTableRow({ order }: OrderTableRowProps) {
 
       <TableCell className="text-muted-foreground">{createdAt}</TableCell>
 
-      <TableCell>
+      <TableCell data-testid="order-table-row-status">
         <OrderStatus status={order.status} />
       </TableCell>
 

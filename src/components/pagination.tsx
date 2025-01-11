@@ -29,7 +29,9 @@ export function Pagination({
 
       <div className="flex items-center gap-6 lg:gap-8">
         <div className="text-sm font-medium">
-          Página {pageIndex + 1} de {pages}
+          Página{" "}
+          <span data-testid="pagination-current-page">{pageIndex + 1}</span> de{" "}
+          <span data-testid="pagination-total-pages">{pages}</span>
         </div>
 
         <div className="flex items-center gap-2">
