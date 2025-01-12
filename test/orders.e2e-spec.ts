@@ -7,9 +7,7 @@ test("list orders", async ({ page }) => {
     page.getByRole("cell", { name: "Customer 1", exact: true }),
   ).toBeVisible();
 
-  expect(page.getByRole("cell", { name: "Customer 10" })).toBeVisible();
-
-  await page.waitForTimeout(250);
+  await expect(page.getByRole("cell", { name: "Customer 10" })).toBeVisible();
 });
 
 test("paginate orders to next page", async ({ page }) => {
@@ -46,8 +44,6 @@ test("paginate orders to first page", async ({ page }) => {
   await page.getByRole("button", { name: "Primeira página" }).click();
 
   await expect(page.getByTestId("pagination-current-page")).toHaveText("1");
-
-  await page.waitForTimeout(250);
 });
 
 test("paginate orders to last page", async ({ page }) => {
@@ -61,14 +57,10 @@ test("paginate orders to last page", async ({ page }) => {
         ?.textContent,
   );
 
-  await page.waitForTimeout(250);
-
   if (paginationTotalPages)
     await expect(page.getByTestId("pagination-current-page")).toHaveText(
       paginationTotalPages,
     );
-
-  await page.waitForTimeout(250);
 });
 
 test("filter by order id", async ({ page }) => {
@@ -77,9 +69,7 @@ test("filter by order id", async ({ page }) => {
   await page.getByPlaceholder("ID do pedido").fill("order-11");
   await page.getByRole("button", { name: "Filtrar resultados" }).click();
 
-  expect(page.getByRole("cell", { name: "order-11" })).toBeVisible();
-
-  await page.waitForTimeout(250);
+  await expect(page.getByRole("cell", { name: "order-11" })).toBeVisible();
 });
 
 test("filter by customer name", async ({ page }) => {
@@ -88,9 +78,7 @@ test("filter by customer name", async ({ page }) => {
   await page.getByPlaceholder("Nome do cliente").fill("Customer 11");
   await page.getByRole("button", { name: "Filtrar resultados" }).click();
 
-  expect(page.getByRole("cell", { name: "Customer 11" })).toBeVisible();
-
-  await page.waitForTimeout(250);
+  await expect(page.getByRole("cell", { name: "Customer 11" })).toBeVisible();
 });
 
 test("filter by status", async ({ page }) => {
